@@ -14,5 +14,3 @@ EXPOSE 8200
 
 # Start the Vault server when the container is run
 CMD [ "vault", "server", "-dev",  "-dev-listen-address=0.0.0.0:8200" ]
-
-
