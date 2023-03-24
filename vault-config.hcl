@@ -6,9 +6,8 @@ listener "tcp" {
 }
 
 # Persistence storage backend
-storage "raft" {
+storage "file" {
   path = "/data/vault/file"
-  node_id = "storage1"
 }
 
 ui = true
