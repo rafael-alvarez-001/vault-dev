@@ -9,8 +9,12 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y vault
 
+COPY vault-config.hcl /etc
+
+RUN mkdir -p /data/vault
+
 # Expose the necessary ports for Vault to run
 EXPOSE 8200
 
 # Start the Vault server when the container is run
-CMD [ "vault", "server", "-dev",  "-dev-listen-address=0.0.0.0:8200", "-dev-root-token-id=cat" ]
+CMD [ "vault", "server", "-config=/etc/vault-config.hcl" ]

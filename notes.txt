@@ -1,0 +1,3 @@
+# Start a prod vault session
+
+vault server -config=./vault-config.hcl
