@@ -1,0 +1,1 @@
+curl --request POST --data "{\"role_id\" : \"$ROLE_ID\", \"secret_id\": \"$SECRET_ID\"}" $VAULT_ADDR/v1/auth/approle/login | jq '.'
