@@ -2,12 +2,13 @@
 
 listener "tcp" {
  address = "0.0.0.0:8200"
- tls_disable = 1
+ tls_disable = true
 }
 
 # Persistence storage backend
-storage "file" {
+storage "raft" {
   path = "/data/vault/file"
+  node_id = "storage1"
 }
 
 ui = true
