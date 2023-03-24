@@ -1,3 +1,8 @@
 # Start a prod vault session
 
 vault server -config=./vault-config.hcl
+
+# Initialize/Unseal vault
+
+vault operator init -key-shares=1 -key-threshold=1 
+
