@@ -11,7 +11,9 @@ RUN apt-get update && \
 
 COPY vault-config.hcl /etc
 
-RUN mkdir -p /data/vault
+RUN mkdir -p /data/vault && \
+    echo "VAULT_ADDR=\"http://localhost:8200\"" >> /root/.bashrc
+
 
 # Expose the necessary ports for Vault to run
 EXPOSE 8200

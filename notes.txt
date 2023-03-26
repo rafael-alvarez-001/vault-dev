@@ -2,7 +2,14 @@
 
 vault server -config=./vault-config.hcl
 
-# Initialize/Unseal vault
+# Initialize vault
 
 vault operator init -key-shares=1 -key-threshold=1 
 
+# Unseal vault
+
+vault operator unseal
+
+# Enable logging
+
+vault audit enable file file_path=/var/log/vault_audit.log
